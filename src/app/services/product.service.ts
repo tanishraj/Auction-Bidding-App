@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 @Injectable()
 
 export class ProductService {
-	private apiBaseUrl : string = "http://arunreghunathan.pythonanywhere.com/auction";
+	private apiBaseUrl : string = "http://arunreghunathan.pythonanywhere.com/auction/item";
 	constructor(private http: Http) { }
 	
 	fetchProductList(){
@@ -12,7 +12,7 @@ export class ProductService {
 	}
 
 	getProduct(productId: number){
-		return this.http.get('http://arunreghunathan.pythonanywhere.com/auction/?id=16');
+		return this.http.get(this.apiBaseUrl+'/'+productId);
 	}
 
 	delProduct(productId : number){
